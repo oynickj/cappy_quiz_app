@@ -36,7 +36,7 @@ describe "The Home Page" do
   it "has a link to /quizzes" do
     find_link('Quizzes').click
     expect(current_path).to eq('/quizzes')
-
+  end
 end
 
 describe 'A page called JavaScript' do
