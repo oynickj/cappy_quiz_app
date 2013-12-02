@@ -52,7 +52,7 @@ describe 'A page called JavaScript' do
   end
 
   it "has a button labeled 'Click Me!'" do
-    button = page.find('button')
+    button = page.find('#button1')
     label = 'Click Me!'
     expect(button.has_content?(label)).to be true
   end
@@ -73,10 +73,30 @@ describe 'A page called JavaScript' do
     end
 
     it "disables the button", :js => true do
-      button = page.find('button')
+      button = page.find('#button1')
       expect(button.disabled?).to be true
     end
 
+  end
+end
+
+describe 'a page called Quizzes' do
+
+  before(:each) do
+    visit '/quizzes'
+  end
+
+  it "has an input field and button labeled 'calc'" do
+    input = page.find('input')
+    button = page.find('#calc-button')
+    label = 'calc'
+    expect(button.has_content?(label)).to be true
+  end
+
+
+  it "changes the body's background to green if numbers in input are sorted and ascending", :js => true do
+    fill_in 'calc'
+        expect(page).to have_css('body.green')
   end
 
 end
