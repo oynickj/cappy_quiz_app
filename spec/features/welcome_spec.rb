@@ -23,15 +23,15 @@ describe "The Home Page" do
     expect(page).to have_content("hello and welcome")
   end
 
-  # it "has the title 'Week 10'" do
-  #   expect(page).to have_title "Week 10"
-  # end
+  it "has the title 'Week 10'" do
+    expect(page).to have_title "Week 10"
+  end
 
-  # it "has a link to /javascript" do
-  #   find_link('JavaScript').click
-  #   expect(page).to have_content('Java Jive')
-  #   expect(current_path).to eq('/javascript')
-  # end
+  it "has a link to /javascript" do
+    find_link('JavaScript').click
+    expect(page).to have_content('Java Jive')
+    expect(current_path).to eq('/javascript')
+  end
 
 end
 
